@@ -1,0 +1,13 @@
+{
+  "name": "exam-express-series",
+  "version": "1.0.0",
+  "main": "students-api.js",
+  "type": "commonjs",
+  "scripts": {
+    "start:students": "node students-api.js",
+    "start:query": "node query-username.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

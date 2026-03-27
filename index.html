@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure online registration form with comprehensive JavaScript validation.">
+  <title>Secure Registration Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro-card" aria-labelledby="heading">
+      <p class="eyebrow">LB Exam Prep</p>
+      <h1 id="heading">Secure Online Registration</h1>
+      <p>
+        This form demonstrates real-world client-side validation: format checks, password strength,
+        age restrictions, matching fields, and clear user-friendly errors.
+      </p>
+      <ul>
+        <li>Responsive layout for desktop and mobile</li>
+        <li>Accessible labels and keyboard-friendly focus states</li>
+        <li>Inline validation with instant feedback</li>
+      </ul>
+    </section>
+
+    <section class="form-card">
+      <form id="registrationForm" novalidate>
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" placeholder="Adit Sharma" autocomplete="name" required>
+            <small class="error" id="fullNameError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="adit_2026" autocomplete="username" required>
+            <small class="error" id="usernameError" aria-live="polite"></small>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" autocomplete="email" required>
+            <small class="error" id="emailError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
+            <small class="error" id="phoneError" aria-live="polite"></small>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input id="dob" name="dob" type="date" required>
+            <small class="error" id="dobError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+              <option value="">Select country</option>
+              <option>India</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Singapore</option>
+              <option>Australia</option>
+              <option>Canada</option>
+            </select>
+            <small class="error" id="countryError" aria-live="polite"></small>
+          </div>
+        </div>
+
+        <fieldset class="form-group radio-group">
+          <legend>Gender</legend>
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+          <small class="error" id="genderError" aria-live="polite"></small>
+        </fieldset>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Create strong password" autocomplete="new-password" required>
+            <small class="hint">Use at least 8 characters with upper, lower, number, and symbol.</small>
+            <small class="error" id="passwordError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Repeat password" autocomplete="new-password" required>
+            <small class="error" id="confirmPasswordError" aria-live="polite"></small>
+          </div>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label>
+            <input id="terms" name="terms" type="checkbox" required>
+            I agree to the Terms and Privacy Policy.
+          </label>
+          <small class="error" id="termsError" aria-live="polite"></small>
+        </div>
+
+        <button id="submitBtn" type="submit">Create Account</button>
+      </form>
+
+      <section id="successCard" class="success-card" hidden aria-live="polite">
+        <h2>Registration Submitted</h2>
+        <p>Your details are valid and ready to send to the backend securely.</p>
+        <pre id="previewData"></pre>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

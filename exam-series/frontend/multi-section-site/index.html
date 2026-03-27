@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaSpark Startup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="nav">
+      <h1>NovaSpark</h1>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">Menu</button>
+      <ul id="menuList">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <p class="tag">Startup Solutions</p>
+      <h2>Build. Launch. Scale.</h2>
+      <p>We help founders design products, automate workflows, and ship faster.</p>
+      <a href="#contact" class="cta">Book Free Consultation</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="section">
+      <h3>Services</h3>
+      <div class="cards">
+        <article><h4>Web Development</h4><p>Modern responsive web apps for startups.</p></article>
+        <article><h4>UI/UX Design</h4><p>Conversion-driven interfaces with clear flows.</p></article>
+        <article><h4>Cloud Support</h4><p>Scalable deployment and monitoring strategy.</p></article>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <h3>About Us</h3>
+      <p>NovaSpark is a small but fast-moving product team that turns ideas into launch-ready software.</p>
+      <p><strong>Live visitors:</strong> <span id="visitorCount">0</span></p>
+    </section>
+
+    <section id="contact" class="section">
+      <h3>Contact</h3>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" type="text" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" required>
+        <button type="submit">Send Message</button>
+        <p id="formMsg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

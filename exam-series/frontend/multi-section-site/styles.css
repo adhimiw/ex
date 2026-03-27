@@ -1,0 +1,147 @@
+:root {
+  --ink: #0f1f32;
+  --muted: #4a6076;
+  --bg: #f7fcff;
+  --accent: #0b9bb8;
+  --accent-2: #ff7a18;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 0% 0%, #ffe8d6, transparent 30%),
+    radial-gradient(circle at 100% 80%, #d9f4ff, transparent 35%),
+    var(--bg);
+}
+
+.hero {
+  min-height: 68vh;
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.hero-content {
+  max-width: 620px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.tag {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+h2, h3 {
+  font-family: "Sora", "Segoe UI", sans-serif;
+}
+
+.cta,
+button {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent), #08728b);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.section {
+  max-width: 980px;
+  margin: 0 auto 1.2rem;
+  padding: 1rem;
+}
+
+.section-alt {
+  background: #eff8ff;
+  border-top: 1px solid #d6e9f7;
+  border-bottom: 1px solid #d6e9f7;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.cards article {
+  background: #fff;
+  border: 1px solid #d3e5f4;
+  border-radius: 12px;
+  padding: 0.85rem;
+}
+
+form {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 420px;
+}
+
+input {
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #9ec4dd;
+}
+
+#formMsg {
+  color: #056748;
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-btn {
+    display: inline-block;
+  }
+
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 1rem;
+    top: 3.2rem;
+    background: #fff;
+    border: 1px solid #d9e8f4;
+    border-radius: 10px;
+    padding: 0.7rem;
+  }
+
+  .nav ul.open {
+    display: flex;
+  }
+}

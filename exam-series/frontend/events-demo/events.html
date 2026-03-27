@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Events Demo</title>
+  <style>
+    body { font-family: Segoe UI, sans-serif; margin: 1rem; }
+    .box { width: 220px; height: 120px; border: 2px solid #444; border-radius: 8px; display: grid; place-items: center; margin-bottom: 1rem; }
+    .pad { border: 1px solid #999; padding: 0.5rem; border-radius: 6px; min-height: 50px; }
+    button { margin-right: 0.5rem; min-height: 44px; }
+  </style>
+</head>
+<body>
+  <h1>Event Handling Demo</h1>
+
+  <h2>1) onkeydown vs onkeyup</h2>
+  <input id="keyInput" type="text" placeholder="Type here">
+  <p id="keyDownLog" class="pad"></p>
+  <p id="keyUpLog" class="pad"></p>
+
+  <h2>2) onmouseover vs onmouseenter</h2>
+  <div id="outer" class="box">Outer
+    <div id="inner" class="box" style="width:120px;height:60px;">Inner</div>
+  </div>
+  <p id="mouseLog" class="pad"></p>
+
+  <h2>3) onclick vs ondblclick</h2>
+  <button id="singleBtn">Single Click</button>
+  <button id="doubleBtn">Double Click</button>
+  <p id="clickLog" class="pad"></p>
+
+  <script src="events.js"></script>
+</body>
+</html>

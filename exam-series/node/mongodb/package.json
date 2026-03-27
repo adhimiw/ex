@@ -1,0 +1,16 @@
+{
+  "name": "exam-mongodb-series",
+  "version": "1.0.0",
+  "main": "mongo-connect.js",
+  "type": "commonjs",
+  "scripts": {
+    "connect": "node mongo-connect.js",
+    "crud": "node mongo-crud.js",
+    "server-crud": "node mongo-server-crud.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.5.1"
+  }
+}

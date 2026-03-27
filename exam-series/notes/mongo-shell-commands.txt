@@ -1,0 +1,15 @@
+show dbs
+use collegeDB
+db.createCollection("students")
+
+db.students.insertOne({ name: "Adit", course: "MCA", age: 22 })
+db.students.find()
+
+db.students.updateOne(
+  { name: "Adit" },
+  { $set: { course: "MERN Stack" } }
+)
+
+db.students.deleteOne({ name: "Adit" })
+
+db.students.drop()
