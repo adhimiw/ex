@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Demo</title>
+    <style>
+        body { font-family: Arial; }
+        .box {
+            width: 250px;
+            height: 120px;
+            background: lightblue;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .btn {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>1. Keyboard Events</h2>
+<input type="text" 
+       onkeydown="keyUp()" 
+       onkeyup="keyDown()" 
+       placeholder="Type here">
+<p id="keyOutput"></p>
+
+
+<h2>2. Mouse Events</h2>
+<div class="box" 
+     onmouseover="mouseOver()" 
+     onmouseenter="mouseEnter()">
+    Hover here
+    <p>Child Text</p>
+</div>
+<p id="mouseOutput"></p>
+
+
+<h2>3. Click Events</h2>
+<button class="btn" 
+        onclick="singleClick()" 
+        ondblclick="doubleClick()">
+    Click Me
+</button>
+<p id="clickOutput"></p>
+
+
+<script>
+
+// Keyboard
+function keyDown() {
+    document.getElementById("keyOutput").innerHTML = "Key Pressed (keydown)";
+}
+function keyUp() {
+    document.getElementById("keyOutput").innerHTML = "Key Released (keyup)";
+}
+
+// Mouse
+function mouseOver() {
+    document.getElementById("mouseOutput").innerHTML = "Mouse Over Triggered";
+}
+function mouseEnter() {
+    document.getElementById("mouseOutput").innerHTML = "Mouse Enter Triggered";
+}
+
+// Click
+function singleClick() {
+    document.getElementById("clickOutput").innerHTML = "Single Click";
+}
+function doubleClick() {
+    document.getElementById("clickOutput").innerHTML = "Double Click";
+}
+
+</script>
+
+</body>
+</html>

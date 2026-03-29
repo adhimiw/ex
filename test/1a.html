@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .container {
+            width: 350px;
+            margin: auto;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" id="name"><br>
+        <div id="nameError" class="error"></div>
+
+        Email:
+        <input type="text" id="email"><br>
+        <div id="emailError" class="error"></div>
+
+        Password:
+        <input type="password" id="password"><br>
+        <div id="passError" class="error"></div>
+
+        Confirm Password:
+        <input type="password" id="cpassword"><br>
+        <div id="cpassError" class="error"></div>
+
+        Mobile:
+        <input type="text" id="mobile"><br>
+        <div id="mobileError" class="error"></div>
+
+        Gender:
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female<br>
+        <div id="genderError" class="error"></div>
+
+        Accept Terms:
+        <input type="checkbox" id="terms"><br>
+        <div id="termsError" class="error"></div>
+
+        <br>
+        <input type="submit" value="Register">
+
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    let valid = true;
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let cpassword = document.getElementById("cpassword").value;
+    let mobile = document.getElementById("mobile").value;
+    let gender = document.getElementsByName("gender");
+    let terms = document.getElementById("terms").checked;
+
+    // clear errors
+    document.getElementById("nameError").innerHTML="";
+    document.getElementById("emailError").innerHTML="";
+    document.getElementById("passError").innerHTML="";
+    document.getElementById("cpassError").innerHTML="";
+    document.getElementById("mobileError").innerHTML="";
+    document.getElementById("genderError").innerHTML="";
+    document.getElementById("termsError").innerHTML="";
+
+    // Name validation
+    let namePattern = /^[A-Za-z]+$/;
+    if (name === "") {
+        document.getElementById("nameError").innerHTML = "Name required";
+        valid = false;
+    } else if (!namePattern.test(name)) {
+        document.getElementById("nameError").innerHTML = "Only alphabets allowed";
+        valid = false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+        document.getElementById("emailError").innerHTML = "Email required";
+        valid = false;
+    } else if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerHTML = "Invalid email";
+        valid = false;
+    }
+
+    // Password validation
+    let passPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    if (password === "") {
+        document.getElementById("passError").innerHTML = "Password required";
+        valid = false;
+    } else if (!passPattern.test(password)) {
+        document.getElementById("passError").innerHTML = "Min 6 chars, letters & numbers";
+        valid = false;
+    }
+
+    // Confirm password
+    if (cpassword !== password) {
+        document.getElementById("cpassError").innerHTML = "Passwords do not match";
+        valid = false;
+    }
+
+    // Mobile validation
+    let mobilePattern = /^[0-9]{10}$/;
+    if (!mobilePattern.test(mobile)) {
+        document.getElementById("mobileError").innerHTML = "Enter 10 digit number";
+        valid = false;
+    }
+
+    // Gender validation
+    let genderSelected = false;
+    for (let i = 0; i < gender.length; i++) {
+        if (gender[i].checked) {
+            genderSelected = true;
+        }
+    }
+    if (!genderSelected) {
+        document.getElementById("genderError").innerHTML = "Select gender";
+        valid = false;
+    }
+
+    // Checkbox validation
+    if (!terms) {
+        document.getElementById("termsError").innerHTML = "Accept terms";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>
