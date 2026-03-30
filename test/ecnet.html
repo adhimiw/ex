@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Demo</title>
+<style>
+.box{padding:10px;border:1px solid #000;margin:10px;width:200px;}
+</style>
+</head>
+<body>
+
+<h3>Events Demo</h3>
+
+<div id="box" class="box">Mouse Area</div>
+<button onclick="clickFun()">Click</button>
+<input type="text" id="txt" placeholder="Type">
+<select id="sel" onchange="changeFun()">
+<option>Select</option><option>Chennai</option>
+</select>
+
+<form onsubmit="return formFun()">
+<input type="text" id="name" placeholder="Name">
+<input type="submit">
+</form>
+
+<p id="out"></p>
+
+<script>
+let out=document.getElementById("out");
+
+// Mouse
+document.getElementById("box").onmouseover=()=>out.innerHTML="Mouse Over";
+
+// Click
+function clickFun(){ out.innerHTML="Button Clicked"; }
+
+// Key
+document.getElementById("txt").onkeyup=function(){
+out.innerHTML="Typed: "+this.value;
+}
+
+// Change
+function changeFun(){
+out.innerHTML="Selected: "+document.getElementById("sel").value;
+}
+
+// Submit
+function formFun(){
+out.innerHTML="Hello "+document.getElementById("name").value;
+return false;
+}
+</script>
+
+</body>
+</html>
